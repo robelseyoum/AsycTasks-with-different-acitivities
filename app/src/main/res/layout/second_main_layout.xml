@@ -32,8 +32,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/tv_alg_result"
             android:textSize="12sp"
-            android:text="The Algorithm Result"
-            tools:text="sorted numbers display here "
+            android:text="The Algorithm Result:-  "
+            tools:text="sorted numbers display here:-   "
 
 
     />

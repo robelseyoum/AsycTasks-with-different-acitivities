@@ -8,6 +8,14 @@
         android:orientation="vertical"
         tools:context=".MainActivity">
 
+    <ProgressBar
+            android:id="@+id/progress_id"
+            android:layout_width="137dp"
+            android:layout_height="104dp"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_marginTop="200dp"/>
+
     <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:layout_marginTop="45dp"

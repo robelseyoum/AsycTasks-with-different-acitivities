@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.second_main_layout.*
 
 class BubbleActivity : AppCompatActivity() {
 
-    private val TAG = "BubbleActivity_Roba"
+    private val TAG = "BubbleActivity"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
