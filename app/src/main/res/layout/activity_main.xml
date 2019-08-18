@@ -14,14 +14,14 @@
               android:textSize="23sp"
               android:text="Sorting Algorithms"
               android:gravity="center"
+              android:id="@+id/tv_title"
     />
 
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/et_numbers"
-            android:hint="Enter the Numbers"
-            android:inputType="number"
+            android:hint="Please enter numbers separated by comma"
             android:layout_marginTop="45dp"
     />
 

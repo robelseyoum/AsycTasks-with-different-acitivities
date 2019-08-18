@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".BubbleActivity"/>
         <activity android:name=".InsertionActivity"/>
-        <activity android:name=".mergeActivity"/>
+        <activity android:name=".MergeActivity"/>
         <activity android:name=".QuickActivity"/>
     </application>
 
