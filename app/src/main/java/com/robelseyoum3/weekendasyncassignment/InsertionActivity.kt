@@ -1,13 +1,17 @@
 package com.robelseyoum3.weekendasyncassignment
 
+import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.second_main_layout.*
 
 class InsertionActivity : AppCompatActivity() {
 
     private val TAG = "QuickActivity"
+    private var numbers: IntArray? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +24,10 @@ class InsertionActivity : AppCompatActivity() {
 
         var intent = intent
 
-        var numbers = intent.getIntArrayExtra(Constants.INTENT_CALL1)
+        numbers = intent.getIntArrayExtra(Constants.INTENT_CALL1)
+
+        //Log.i(TAG, " Bubble Robel Acitivity ARRAY VALUES $numbers" )
+
 
 
         //Log.i(TAG, " Insertion Robel Acitivity ARRAY VALUES $numbers" )
@@ -29,12 +36,19 @@ class InsertionActivity : AppCompatActivity() {
 
         //val myArray = insertionsort(numbers)
 
-        val myArray = insertionsort(numbers.toMutableList())
+      //  val myArray = insertionsort(numbers.toMutableList())
+
+      //  Log.i(TAG, " Insertion Robel Acitivity ARRAY VALUES $myArray" )
+
 
         // Loop through the first array elements
-        for (element in myArray){
-            tv_alg_result.text = tv_alg_result.text.toString() + element + ", "
-        }
+//        for (element in myArray){
+//            tv_alg_result.text = tv_alg_result.text.toString() + element + ", "
+//        }
+
+
+        MyAsnc().execute()
+
 
 
     }
@@ -55,6 +69,7 @@ class InsertionActivity : AppCompatActivity() {
 //    }
 
     fun insertionsort(items:MutableList<Int>):List<Int>{
+        //arr!!.size
         if (items.isEmpty() || items.size<2){
             return items
         }
@@ -69,5 +84,44 @@ class InsertionActivity : AppCompatActivity() {
             items[i] = item
         }
         return items
+    }
+
+    inner class MyAsnc : AsyncTask<IntArray, IntArray, String>(){
+
+        override fun onPreExecute() {
+
+            super.onPreExecute()
+            progress_id_second.visibility = View.VISIBLE
+        }
+
+
+        override fun doInBackground(vararg p0: IntArray?): String {
+
+            Thread.sleep(2000)
+
+            // Loop through the first array elements
+            var finalResult: String = ""
+
+            val myArray = insertionsort(numbers!!.toMutableList())
+            //Log.d("Array", myArray.size.toString())
+
+            for (i in 0 until myArray.size) {
+                // Log.d("Array val", myArray[i].toString())
+                finalResult = finalResult + myArray[i].toString()+" "
+            }
+
+            //Log.i(TAG, " Bubble sort doInBackgroung MyAsnc $finalResult")
+
+            return finalResult
+        }
+
+        override fun onPostExecute(result: String) {
+            super.onPostExecute(result)
+            progress_id_second.visibility = View.GONE
+            //set result in textView
+            tv_alg_result.text = result
+
+        }
+
     }
 }
