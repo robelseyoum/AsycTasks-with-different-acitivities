@@ -28,19 +28,7 @@ class MergeActivity : AppCompatActivity(){
 
         numbers = intent.getIntArrayExtra(Constants.INTENT_CALL1)
 
-
-        //Log.i(TAG, " Insertion Robel Acitivity ARRAY VALUES $numbers" )
-
-
-        //val myArray = insertionsort(numbers)
-
-
-        // Loop through the first array elements
-//        for (element in myArray){
-//            tv_alg_result.text = tv_alg_result.text.toString() + element + ", "
-//        }
         MyAsnc().execute()
-
     }
 
 
@@ -109,8 +97,6 @@ class MergeActivity : AppCompatActivity(){
                 finalResult = finalResult + myArray[i].toString()+" "
             }
 
-            //Log.i(TAG, " Bubble sort doInBackgroung MyAsnc $finalResult")
-
             return finalResult
         }
 
@@ -127,7 +113,4 @@ class MergeActivity : AppCompatActivity(){
     }
 
 
-
-
-
-    }
+}

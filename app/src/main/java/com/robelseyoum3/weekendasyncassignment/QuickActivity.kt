@@ -17,11 +17,7 @@ class QuickActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.second_main_layout)
 
-
-
         Log.i(TAG, "Please now you are in QuickActivity activity")
-
-        var sortedResult: Int = 0
 
         var intent = intent
 
@@ -29,16 +25,6 @@ class QuickActivity : AppCompatActivity() {
 
         MyAsnc().execute()
 
-
-        //Log.i(TAG, " Insertion Robel Acitivity ARRAY VALUES $numbers" )
-
-       // quickSort(numbers, 0, numbers.size-1)
-
-
-//        // Loop through the first array elements
-//        for (element in numbers){
-//            tv_alg_result.text = tv_alg_result.text.toString() + element + ", "
-//        }
     }
 
     fun quickSort(array: IntArray, left: Int, right: Int) {
@@ -121,4 +107,4 @@ class QuickActivity : AppCompatActivity() {
 
 
 
-    }
+}

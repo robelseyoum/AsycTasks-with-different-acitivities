@@ -20,36 +20,11 @@ class InsertionActivity : AppCompatActivity() {
 
         Log.i(TAG, "Please now you are in Insertion activity")
 
-        var sortedResult: Int = 0
-
         var intent = intent
 
         numbers = intent.getIntArrayExtra(Constants.INTENT_CALL1)
 
-        //Log.i(TAG, " Bubble Robel Acitivity ARRAY VALUES $numbers" )
-
-
-
-        //Log.i(TAG, " Insertion Robel Acitivity ARRAY VALUES $numbers" )
-
-
-
-        //val myArray = insertionsort(numbers)
-
-      //  val myArray = insertionsort(numbers.toMutableList())
-
-      //  Log.i(TAG, " Insertion Robel Acitivity ARRAY VALUES $myArray" )
-
-
-        // Loop through the first array elements
-//        for (element in myArray){
-//            tv_alg_result.text = tv_alg_result.text.toString() + element + ", "
-//        }
-
-
         MyAsnc().execute()
-
-
 
     }
 
@@ -110,7 +85,7 @@ class InsertionActivity : AppCompatActivity() {
                 finalResult = finalResult + myArray[i].toString()+" "
             }
 
-            //Log.i(TAG, " Bubble sort doInBackgroung MyAsnc $finalResult")
+            //Lsog.i(TAG, " Bubble sort doInBackgroung MyAsnc $finalResult")
 
             return finalResult
         }

@@ -80,7 +80,6 @@ class BubbleActivity : AppCompatActivity() {
 
         }
 
-
         override fun onPostExecute(result: String) {
             super.onPostExecute(result)
             progress_id_second.visibility = View.GONE
